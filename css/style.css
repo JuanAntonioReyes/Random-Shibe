@@ -3,3 +3,7 @@ footer {
 	position: fixed;
 	bottom: 0;
 }
+
+#shibePhoto {
+	max-height: 500px;
+}
