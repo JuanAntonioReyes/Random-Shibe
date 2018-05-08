@@ -21,7 +21,7 @@ $(document).ready(function() {
 		//console.log(response[0]);
 
 		var imageUrl = response[0];
-		var shibeImg = '<img src="' + imageUrl + '">';
+		var shibeImg = '<img src="' + imageUrl + '" class="img-fluid">';
 		shibeContainer.html(shibeImg);
 	}
 
