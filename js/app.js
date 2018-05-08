@@ -9,7 +9,7 @@ $(document).ready(function() {
 	function getNewShibe(e){
 		// Make the ajax request
 		$.ajax({
-			url: 'http://shibe.online/api/shibes?count=1',
+			url: 'https://cors-anywhere.herokuapp.com/http://shibe.online/api/shibes?count=1',
 			type: 'GET',
 			dataType: 'JSON',
 			success: handleCheckSuccess,
@@ -19,7 +19,6 @@ $(document).ready(function() {
 
 	function handleCheckSuccess(response) {
 		//console.log(response[0]);
-
 		var imageUrl = response[0];
 		var shibeImg = '<img id="shibePhoto" src="' + imageUrl + '" class="img-fluid">';
 		shibeContainer.html(shibeImg);
