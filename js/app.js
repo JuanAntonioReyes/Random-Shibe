@@ -18,7 +18,11 @@ $(document).ready(function() {
 	}
 
 	function handleCheckSuccess(response) {
-		console.log(response);
+		//console.log(response[0]);
+
+		var imageUrl = response[0];
+		var shibeImg = '<img src="' + imageUrl + '">';
+		shibeContainer.html(shibeImg);
 	}
 
 	function handleError(response) {
