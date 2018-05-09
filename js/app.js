@@ -7,14 +7,17 @@ $(document).ready(function() {
 	btnGetNew.click(getNewShibe);
 
 	function getNewShibe(e){
-		// Make the ajax request
-		$.ajax({
-			url: 'https://cors-anywhere.herokuapp.com/http://shibe.online/api/shibes?count=1',
-			type: 'GET',
-			dataType: 'JSON',
-			success: handleCheckSuccess,
-			error: handleError
-		})
+		var corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
+		var apiUrl = 'http://shibe.online/api/shibes?count=1';
+
+		fetch(corsAnywhere + apiUrl)
+		.then(response => {
+		  return response.json();
+		}).then(data => {
+		  handleCheckSuccess(data);
+		}).catch(err => {
+		  handleError(err);
+		});
 	}
 
 	function handleCheckSuccess(response) {
@@ -24,7 +27,7 @@ $(document).ready(function() {
 		shibeContainer.html(shibeImg);
 	}
 
-	function handleError(response) {
+	function handleError(err) {
 		console.log("SOMETHING WENT WRONG - ERROR");
 	}
 
