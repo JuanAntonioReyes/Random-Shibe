@@ -7,6 +7,9 @@ $(document).ready(function() {
 	btnGetNew.click(getNewShibe);
 
 	function getNewShibe(e){
+		var loadingText = 'Loading...';
+		shibeContainer.html(loadingText);
+
 		var corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
 		var apiUrl = 'http://shibe.online/api/shibes?count=1';
 
